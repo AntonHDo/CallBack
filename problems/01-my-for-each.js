@@ -28,6 +28,8 @@ function myForEach(array, cb) {
     }
 }
 
+hello;
+
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
     module.exports = myForEach;
