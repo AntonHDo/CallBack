@@ -42,17 +42,34 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - How many times are you calling each callback function?
 *******************************************************************************/
 
-function selectiveMap(array, selector, mapper) {
-    let emptyArray = []
-    array.forEach((el) => {
-        if (selector(el) === true) {
-            emptyArray.push(mapper(el))
-        } else {
-            emptyArray.push(el)
-        }
+// function selectiveMap(array, selector, mapper) {
+//     let emptyArray = []
+//     array.forEach((el) => {
+//         if (selector(el) === true) {
+//             emptyArray.push(mapper(el))
+//         } else {
+//             emptyArray.push(el)
+//         }
 
-    })
-    return emptyArray
+//     })
+//     return emptyArray
+// }
+
+
+// Davids way
+function selectiveMap(array, selector, mapper) {
+    let resArr = []
+
+    for (let i = 0; i < array.length; i++) {
+        let el = array[i]
+        if (selector(el)) {
+            let cbRes = mapper(el)
+            resArr.push(cbRes)
+        } else {
+            resArr.push(el)
+        }
+    }
+    return resArr
 }
 
 
